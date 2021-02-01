@@ -26,16 +26,17 @@ public static class CitaviMacro{
 
 	public static void Main(){
 
+
 	// user settings for import ------------------------------------------------
 
 		// define names of excel columns to be read from
-		string[] excelColNames = new string[4];
+		string[] excelColNames = new string[100]; // dont change
 		excelColNames[0] = "ID"; // excel column name to be merged by (=Citavi-ID)
 		excelColNames[1] = "clean_title";    // excel column to be read from #1
 		excelColNames[2] = "clean_title_id"; // excel column to be read from #2      
 		excelColNames[3] = "obv_dup_id";     // excel column to be read from #3
 		// excelColNames[4] = "has_obv_dup";    // excel column to be read from #4
-		
+
 		// define names of citavi fields to be written into
 		ReferencePropertyId[] citaviField = new ReferencePropertyId[4];
 		citaviField[0] = ReferencePropertyId.TranslatedTitle; // dummy filler, never used, no need to change
@@ -43,6 +44,9 @@ public static class CitaviMacro{
 		citaviField[2] = ReferencePropertyId.CustomField2;    // citavi field to be written into #2
 		citaviField[3] = ReferencePropertyId.CustomField3;    // citavi field to be written into #3
 		// citaviField[4] = ReferencePropertyId.CustomField4;    // citavi field to be written into #4
+
+
+		excelColNames = excelColNames.Where(x => !string.IsNullOrEmpty()).ToArray(); // dont change
 
 
 	// read from excel columns (= excel import) --------------------------------
@@ -132,29 +136,29 @@ public static class CitaviMacro{
 		for (int i = 1; i < dataTable.Rows.Count; i++)
 		{
 
-			string MergeColData_i = dataTable.Rows[i][excelColData[0]].ToString();
+			string MergeColEntry_i = dataTable.Rows[i][excelColData[0]].ToString();
 
-			if (string.IsNullOrEmpty(MergeColData_i))
+			if (string.IsNullOrEmpty(MergeColEntry_i))
 			{
 				// writing impossible if ID is empty for a reference
 				DebugMacro.WriteLine("   Not writing data for reference in row " + i + " of excel file because '" + MergeColName + "' is empty."); 
 			}
 			else
 			{
-				// Determine which parentReference in citavi has the same ID
+				// determine which parentReference in citavi has the same ID
 				Reference parentReference;
-				parentReference = GetReferenceWithCitaviID(MergeColData_i);
+				parentReference = GetReferenceWithCitaviID(MergeColEntry_i);
 
 				if (parentReference == null)
 				{
 					// if the 'parentReference' is not present in the Citavi project
-					DebugMacro.WriteLine("   Not writing data for reference in row " + i + " of excel file because no reference with the same '" + MergeColName + "' exists in this Citavi project (" + MergeColData_i + ")");	
+					DebugMacro.WriteLine("   Not writing data for reference in row " + i + " of excel file because no reference with the same '" + MergeColName + "' exists in this Citavi project (" + MergeColEntry_i + ")");	
 				}
 				
 				else
 				{
 					// if the 'parentReference' is present in the Citavi project
-					DebugMacro.WriteLine("   Writing data for reference in row " + i + " of excel file into existing reference with the same '" + MergeColName + "' (" + MergeColData_i + ")");
+					DebugMacro.WriteLine("   Writing data for reference in row " + i + " of excel file into existing reference with the same '" + MergeColName + "' (" + MergeColEntry_i + ")");
 
 					for (int j = 1; j < citaviField.Length; j++)
 					{
