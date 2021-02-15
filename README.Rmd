@@ -1,0 +1,14 @@
+---
+output: github_document
+---
+
+# CitaviRMacros
+
+A set of custom Citavi macros that complement [CitaviR](https://github.com/SchmidtPaul/CitaviR#citavir-).
+
+ * **Excel-Import Macros (CIMR)**
+   + [**CIMR 001** - Import find_obvious_dup info](CIMR Import/CIMR 001 - Import find_obvious_dup info/)
+   + [**CIMR 002** - Import handle_obvious_dup info](CIMR Import/CIMR 002 - Import handle_obvious_dup info/)
+   + [**CIMR 010** - Import categories](CIMR Import/CIMR 010 - Import categories/)
+   
+<img src='https://github.com/SchmidtPaul/CitaviR/blob/master/man/figures/logo.png?raw=true' align="left" height="138" />
