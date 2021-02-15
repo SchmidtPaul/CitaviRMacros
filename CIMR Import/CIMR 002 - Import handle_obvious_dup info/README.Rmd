@@ -20,4 +20,4 @@ read_Citavi_xlsx(path) %>% # imports 3dupsin5refs.xlsx
   write_Citavi_xlsx(path)  # creates 3dupsin5refs_R_out.xlsx
 ```
 
-Note, that this is more of a template you will probably need to adjust for your use cases. Which excel columns should be imported into which Citavi fields can be changed by editing the [user settings for import](https://github.com/SchmidtPaul/CitaviRMacros/blob/bda164893591000f2677c23dbb5776bd8d8dacbe/CIMR%20Import/CIMR%20001/CIMR%20001%20Import%20obvious_dup%20info.cs#L29) section of the macro. 
+Note, that this is more of a template you will probably need to adjust for your use cases. Which excel columns should be imported into which Citavi fields can be changed by editing the [user settings for import](https://github.com/SchmidtPaul/CitaviRMacros/blob/f76e625552fe3bbf1637f11b13a9aa9c037c7131/CIMR%20Import/CIMR%20002%20-%20Import%20handle_obvious_dup%20info/CIMR%20001%20Import%20handle_obvious_dup%20info.cs#L30) section of the macro. 
