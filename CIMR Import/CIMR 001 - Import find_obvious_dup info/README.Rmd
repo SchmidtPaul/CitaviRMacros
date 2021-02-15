@@ -9,7 +9,7 @@ Custom Citavi macro that imports the results created by the `find_obvious_dups()
 
 The excel file shown above can be created as:
 
-```{r ,message = FALSE, warning = FALSE, error = FALSE}
+```{r , eval = FALSE, message = FALSE, warning = FALSE, error = FALSE}
 library(CitaviR)
 
 path   <- example_xlsx('3dupsin5refs.xlsx') # replace with path to your xlsx file

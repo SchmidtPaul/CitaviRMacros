@@ -30,7 +30,7 @@ public static class CitaviMacro{
 	// user settings for import ------------------------------------------------
 
 		// define names of excel columns to be read from
-		string[] excelColNames = new string[100]; // dont change
+		string[] excelColNames = new string[4];
 		excelColNames[0] = "ID"; // excel column name to be merged by (=Citavi-ID)
 		excelColNames[1] = "clean_title";    // excel column to be read from #1
 		excelColNames[2] = "clean_title_id"; // excel column to be read from #2      
@@ -46,7 +46,7 @@ public static class CitaviMacro{
 		// citaviField[4] = ReferencePropertyId.CustomField4;    // citavi field to be written into #4
 
 
-		excelColNames = excelColNames.Where(x => !string.IsNullOrEmpty()).ToArray(); // dont change
+		// TO DO excelColNames = excelColNames.Where(x => !string.IsNullOrEmpty()).ToArray(); // dont change
 
 
 	// read from excel columns (= excel import) --------------------------------
