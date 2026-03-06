@@ -1,5 +1,12 @@
-
 # CitaviRMacros
+
+> **⚠️ This package is no longer maintained.**
+>
+> CitaviRMacros was built as a companion to [CitaviR](https://github.com/SchmidtPaul/CitaviR), which targeted **Citavi 6 local projects**. Citavi has since transitioned to a cloud-based model, and — critically — **still does not offer any API access nor has announced plans to do so**. This makes it impossible to build or maintain reliable programmatic integrations with current versions of Citavi.
+>
+> The macros remain available on GitHub for reference, but no further development is planned.
+
+---
 
 A set of custom Citavi macros that complement
 [CitaviR](https://github.com/SchmidtPaul/CitaviR#citavir-).
